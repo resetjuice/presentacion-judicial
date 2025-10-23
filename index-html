@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen Ejecutivo: Escuelas Judiciales en México</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            color: #1e3a8a;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3b82f6;
+        }
+        
+        .subsection-title {
+            color: #2563eb;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        
+        .card h3 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .stat-highlight {
+            background: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .stat-highlight strong {
+            color: #1e3a8a;
+            font-size: 18px;
+        }
+        
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #475569;
+        }
+        
+        .best-practices {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .best-practices h4 {
+            color: #059669;
+            margin-bottom: 10px;
+        }
+        
+        .key-point {
+            background: #fef3c7;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .explanation-box {
+            background: #f1f5f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #64748b;
+        }
+        
+        .explanation-box p {
+            margin-bottom: 8px;
+            color: #334155;
+        }
+        
+        .source {
+            background: #fafafa;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-left: 3px solid #94a3b8;
+            font-size: 13px;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        .footer {
+            background: #f8fafc;
+            padding: 20px 40px;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        .note-box {
+            background: #fff7ed;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #f97316;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Escuelas Judiciales en México</h1>
+            <p>Resumen Ejecutivo | Análisis y Mejores Prácticas</p>
+        </div>
+        
+        <div class="content">
+            <!-- PANORAMA GENERAL -->
+            <div class="section">
+                <h2 class="section-title">1. Panorama General</h2>
+                
+                <div class="stat-highlight">
+                    <strong>Contexto:</strong> México cuenta con más de 2,119 instituciones que ofrecen Licenciatura en Derecho (más de 2,500 programas activos), pero solo el <strong>10.85%</strong> tiene certificación de calidad (272 programas certificados de 2,506 activos).
+                </div>
+                
+                <p style="margin-top: 15px;">Las escuelas judiciales se especializan en la formación de posgrado para operadores de justicia, con un enfoque práctico y especializado que las diferencia de la educación jurídica tradicional.</p>
+                
+                <div class="explanation-box">
+                    <p><strong>Implicación:</strong> La baja tasa de certificación indica que la calidad en la formación jurídica está concentrada en una minoría de instituciones. Esto hace que las escuelas judiciales especializadas sean fundamentales para garantizar estándares profesionales en la administración de justicia.</p>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuente:</strong> Punto por punto - Análisis de programas de Derecho en México / Secretaría de Economía
+                </div>
+            </div>
+
+            <!-- INSTITUCIONES CLAVE -->
+            <div class="section">
+                <h2 class="section-title">2. Principales Instituciones</h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>🏛️ Escuela Federal de Formación Judicial (EFFJ)</h3>
+                        <p><strong>Ámbito:</strong> Federal</p>
+                        <p><strong>Destaca por:</strong> Formación de jueces y magistrados federales, Carrera Judicial Federal</p>
+                        <p><strong>Enfoque:</strong> Ética judicial, perspectiva de género, DDHH</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>⚖️ Escuela Judicial TEPJF</h3>
+                        <p><strong>Ámbito:</strong> Electoral</p>
+                        <p><strong>Destaca por:</strong> Especialización en derecho electoral y justicia democrática</p>
+                        <p><strong>Enfoque:</strong> Magistrados y funcionarios electorales</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎓 Escuelas Judiciales Estatales</h3>
+                        <p><strong>Ámbito:</strong> Local</p>
+                        <p><strong>Destacadas:</strong> Estado de México, Jalisco, Nuevo León, Morelos, Guanajuato</p>
+                        <p><strong>Enfoque:</strong> Capacitación continua y posgrados especializados</p>
+                    </div>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuentes:</strong> Escuela Judicial (escuelajudicial.cjf.gob.mx) / TEPJF (escuela.te.gob.mx) / Poder Judicial del Estado de México (poderjudicialedomex.gob.mx)
+                </div>
+            </div>
+
+            <!-- DATOS ESTADÍSTICOS -->
+            <div class="section">
+                <h2 class="section-title">3. Datos Estadísticos Clave (2022)</h2>
+                
+                <div class="note-box">
+                    <strong>Nota metodológica:</strong> Los datos estadísticos disponibles corresponden únicamente a las Escuelas Judiciales de Guanajuato y Estado de México. La Escuela Judicial de Morelos no reporta públicamente datos cuantitativos de matrícula, egresados o graduados en los documentos consultados.
+                </div>
+                
+                <h3 class="subsection-title">Matrícula por Género</h3>
+                <div class="chart-container">
+                    <div class="chart-wrapper">
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <strong>Hallazgo clave:</strong> En ambas instituciones analizadas, las mujeres representan aproximadamente el 60% de la matrícula (59.5% en Guanajuato y 63.9% en Estado de México), superando significativamente a los hombres.
+                </div>
+
+                <h3 class="subsection-title">Indicadores de Desempeño</h3>
+                <div class="chart-container">
+                    <div class="chart-wrapper">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="explanation-box">
+                    <p><strong>Análisis de eficiencia:</strong></p>
+                    <ul>
+                        <li><strong>Guanajuato:</strong> Tasa de egreso 69.4% (77/111), tasa de graduación 50.5% (56/111)</li>
+                        <li><strong>Estado de México:</strong> Tasa de egreso 87.6% (85/97), tasa de graduación 36.1% (35/97)</li>
+                    </ul>
+                    <p style="margin-top: 10px;">El Estado de México tiene mejor retención (mayor egreso), pero Guanajuato logra una mayor tasa de graduación final. Esto sugiere diferentes enfoques: uno privilegia la permanencia y otro el nivel de exigencia académica.</p>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuente:</strong> Secretaría de Economía - Datos estadísticos de escuelas judiciales 2022
+                </div>
+            </div>
+
+            <!-- PROGRAMAS MÁS DEMANDADOS -->
+            <div class="section">
+                <h2 class="section-title">4. Programas Más Demandados</h2>
+                
+                <div class="chart-container">
+                    <div class="chart-wrapper">
+                        <canvas id="programsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="explanation-box">
+                    <p><strong>Tendencia identificada:</strong> Los programas con mayor matrícula reflejan las necesidades prácticas del sistema judicial:</p>
+                    <ul>
+                        <li><strong>Derecho Judicial (55):</strong> Formación integral para operadores judiciales</li>
+                        <li><strong>Mecanismos Alternos (32):</strong> Respuesta a la saturación del sistema y políticas de justicia restaurativa</li>
+                        <li><strong>Derecho Procesal (29):</strong> Actualización en sistema acusatorio y oralidad</li>
+                        <li><strong>Justicia Penal (23):</strong> Implementación continua de reformas penales</li>
+                    </ul>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuente:</strong> Secretaría de Economía - Estadísticas de matrícula por programa 2022
+                </div>
+            </div>
+
+            <!-- MEJORES PRÁCTICAS -->
+            <div class="section">
+                <h2 class="section-title">5. Mejores Prácticas Identificadas</h2>
+                
+                <div class="best-practices">
+                    <h4>✅ Prácticas con Evidencia de Efectividad</h4>
+                    
+                    <p style="margin: 15px 0 10px 0;"><strong>1. Evaluación continua y medición de resultados</strong></p>
+                    <p>La EFFJ publica informes y evaluaciones periódicas de sus cursos y planes (marzo-agosto 2024), demostrando que la medición continua es una práctica institucional consolidada.</p>
+                    <div class="explanation-box">
+                        <p><strong>Por qué funciona:</strong> La evaluación sistemática permite identificar qué programas tienen mayor impacto, ajustar contenidos en tiempo real y demostrar resultados tangibles. Sin medición, no hay mejora continua ni rendición de cuentas.</p>
+                    </div>
+                    
+                    <p style="margin: 15px 0 10px 0;"><strong>2. Oferta especializada por competencias</strong></p>
+                    <p>La EFFJ documenta oferta amplia en temas específicos: pruebas periciales, gestión judicial, audiencias, perspectiva de género.</p>
+                    <div class="explanation-box">
+                        <p><strong>Por qué funciona:</strong> La especialización temática mejora el desempeño judicial porque aborda habilidades prácticas directamente aplicables. Los jueces no solo necesitan teoría, sino herramientas concretas para resolver casos reales (ej: cómo valorar un peritaje, cómo conducir una audiencia).</p>
+                    </div>
+                    
+                    <p style="margin: 15px 0 10px 0;"><strong>3. Diagnóstico participativo de necesidades</strong></p>
+                    <p>Estudio CEJA identifica como práctica prometedora: encuestas a jueces/operadores, consultas en línea y grupos focales para diseño curricular.</p>
+                    <div class="explanation-box">
+                        <p><strong>Por qué funciona:</strong> Los operadores judiciales conocen mejor que nadie sus necesidades de formación. Diseñar "desde arriba" sin consultar genera programas irrelevantes. La participación asegura pertinencia y mayor compromiso con la capacitación.</p>
+                    </div>
+                    
+                    <p style="margin: 15px 0 10px 0;"><strong>4. Modalidad híbrida (presencial + virtual)</strong></p>
+                    <p>EFFJ y escuelas estatales utilizan campus virtuales y programas anuales combinados con sesiones presenciales.</p>
+                    <div class="explanation-box">
+                        <p><strong>Por qué funciona:</strong> Los jueces tienen agendas saturadas. La modalidad híbrida permite mayor cobertura geográfica, flexibilidad horaria y costos reducidos, sin sacrificar la calidad. Lo virtual para teoría, lo presencial para práctica y networking.</p>
+                    </div>
+                    
+                    <p style="margin: 15px 0 10px 0;"><strong>5. Transparencia y publicación de indicadores</strong></p>
+                    <p>Varios tribunales y la EFFJ publican planes anuales, informes y tablas de indicadores accesibles al público.</p>
+                    <div class="explanation-box">
+                        <p><strong>Por qué funciona:</strong> La transparencia genera confianza ciudadana, facilita la rendición de cuentas y permite que otras instituciones adopten mejores prácticas. Lo que se mide y se publica, se mejora.</p>
+                    </div>
+                </div>
+                
+                <h3 class="subsection-title">Indicadores Recomendados</h3>
+                <div class="explanation-box">
+                    <p><strong>¿Por qué estos indicadores?</strong> Permiten medir no solo actividades (cuántos cursos), sino resultados e impacto real en la calidad de la justicia:</p>
+                </div>
+                
+                <ul>
+                    <li><strong>Tasa de aprobación y graduación:</strong> Mide efectividad del programa y nivel de exigencia académica</li>
+                    <li><strong>Tiempo medio de resolución de casos:</strong> Indica si la capacitación mejora eficiencia judicial (impacto operativo directo)</li>
+                    <li><strong>Satisfacción de participantes:</strong> Retroalimentación sobre pertinencia y calidad de contenidos</li>
+                    <li><strong>Porcentaje de personal certificado:</strong> Mide cobertura institucional de la capacitación</li>
+                    <li><strong>Calidad de motivación en sentencias:</strong> Evalúa si la formación mejora la argumentación jurídica (calidad sustantiva)</li>
+                </ul>
+                
+                <div class="explanation-box">
+                    <p><strong>Marco de referencia:</strong> Estos indicadores se alinean con metodologías internacionales como las del World Justice Project (acceso, eficacia, integridad) y propuestas de México Evalúa para evaluación de reformas judiciales.</p>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuentes:</strong> Escuela Judicial (evaluaciones EFFJ) / CEJA (cejamericas.org - estudio de buenas prácticas) / México Evalúa (mexicoevalua.org - indicadores de reforma judicial) / World Justice Project (índice de estado de derecho)
+                </div>
+            </div>
+
+            <!-- ESCUELA JUDICIAL DE MORELOS -->
+            <div class="section">
+                <h2 class="section-title">6. Caso: Escuela Judicial de Morelos</h2>
+                
+                <div class="card" style="margin-bottom: 20px;">
+                    <h3>📍 Información General</h3>
+                    <p><strong>Creación:</strong> 10 de julio de 2003 (Acuerdo del Consejo de la Judicatura)</p>
+                    <p><strong>Reglamento:</strong> Aprobado el 6 de diciembre de 2010</p>
+                    <p><strong>Dependencia:</strong> Poder Judicial del Estado de Morelos</p>
+                    <p><strong>Ubicación:</strong> Calle Dwight W. Morrow No. 17, Col. Centro, Cuernavaca</p>
+                    <p><strong>Teléfono:</strong> 362 22 71</p>
+                </div>
+                
+                <h3 class="subsection-title">Misión</h3>
+                <p style="background: #f8fafc; padding: 15px; border-radius: 6px; margin: 10px 0;">
+                    "Desarrollar la carrera judicial a través de la formación continua, capacitación y profesionalización de servidores públicos, con el objetivo de formar impartidores de justicia con principios y valores."
+                </p>
+                
+                <h3 class="subsection-title">Visión</h3>
+                <p style="background: #f8fafc; padding: 15px; border-radius: 6px; margin: 10px 0;">
+                    "Consolidarse y posicionarse a nivel estatal y nacional, como una institución formativa y educativa de la ciencia del derecho que propicie la generación de conocimiento y pensamiento crítico, con altos indicadores de calidad y excelencia."
+                </p>
+                
+                <h3 class="subsection-title">Ejes Estratégicos</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h3>1. Carrera Judicial</h3>
+                        <p>Ingreso, formación y promociones</p>
+                    </div>
+                    <div class="card">
+                        <h3>2. Educación Continua</h3>
+                        <p>Cursos, conferencias, talleres y diplomados</p>
+                    </div>
+                    <div class="card">
+                        <h3>3. Posgrados</h3>
+                        <p>Especialidades, maestrías y doctorados</p>
+                    </div>
+                    <div class="card">
+                        <h3>4. Curso de Inducción</h3>
+                        <p>Obligatorio para personal judicial</p>
+                    </div>
+                    <div class="card">
+                        <h3>5. Divulgación</h3>
+                        <p>Revista jurídica y publicaciones</p>
+                    </div>
+                    <div class="card">
+                        <h3>6. Valores y Ética</h3>
+                        <p>Fortalecimiento institucional</p>
+                    </div>
+                    <div class="card">
+                        <h3>7. Derechos Humanos y Género</h3>
+                        <p>Integración transversal en justicia</p>
+                    </div>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuentes:</strong> Tribunal Superior de Justicia del Estado de Morelos (tsjmorelos.gob.mx / tsjmorelos2.gob.mx) / Periódico Oficial "Tierra y Libertad" No. 4273 / Reglamento de la Escuela Judicial (periodico.morelos.gob.mx)
+                </div>
+            </div>
+
+            <!-- RECOMENDACIONES -->
+            <div class="section">
+                <h2 class="section-title">7. Recomendaciones Estratégicas</h2>
+                
+                <div class="key-point">
+                    <p><strong>1. Implementar sistema de indicadores cuantitativos</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Adoptar métricas de desempeño comparables con otras jurisdicciones (matrícula, egreso, graduación, satisfacción).</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Justificación:</strong> Actualmente Morelos no publica estadísticas públicas de matrícula o graduación. Sin datos, es imposible evaluar efectividad, compararse con otras escuelas judiciales o demostrar resultados. La medición es el primer paso para la mejora.</p>
+                    <p><strong>Referencia:</strong> Guanajuato y Estado de México reportan públicamente estos datos a la Secretaría de Economía, lo que permite evaluación externa y benchmarking.</p>
+                </div>
+                
+                <div class="key-point">
+                    <p><strong>2. Fortalecer diagnóstico participativo de necesidades</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Realizar encuestas periódicas a jueces y operadores judiciales para identificar brechas de formación prioritarias.</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Justificación:</strong> El diseño curricular participativo (identificado por CEJA como mejor práctica) asegura que los programas respondan a necesidades reales del sistema judicial de Morelos. Evita invertir recursos en capacitaciones genéricas de bajo impacto.</p>
+                    <p><strong>Beneficio esperado:</strong> Mayor pertinencia, mejor asistencia y aplicación práctica de lo aprendido.</p>
+                </div>
+                
+                <div class="key-point">
+                    <p><strong>3. Desarrollar programas especializados por competencias</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Crear módulos cortos y prácticos en habilidades específicas: gestión de audiencias, valoración probatoria, perspectiva de género, justicia digital.</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Justificación:</strong> Los datos muestran alta demanda de programas especializados (mecanismos alternos, derecho procesal). La formación por competencias es más efectiva que cursos teóricos generales porque ofrece herramientas directamente aplicables.</p>
+                    <p><strong>Modelo a seguir:</strong> EFFJ documenta mayor satisfacción y aplicabilidad en programas enfocados en competencias prácticas específicas.</p>
+                </div>
+                
+                <div class="key-point">
+                    <p><strong>4. Aumentar transparencia y rendición de cuentas</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Publicar informes anuales con indicadores, planes de trabajo y resultados de evaluación de programas.</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Justificación:</strong> La transparencia es estándar en escuelas judiciales líderes (EFFJ, varios estados). Genera confianza ciudadana, facilita auditorías y permite adoptar mejores prácticas de otras jurisdicciones.</p>
+                    <p><strong>Impacto adicional:</strong> Mejora la percepción pública del Poder Judicial y fortalece la legitimidad institucional.</p>
+                </div>
+                
+                <div class="key-point">
+                    <p><strong>5. Establecer convenios nacionales e internacionales</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Vinculación con EFFJ, escuelas judiciales de otros estados y organismos internacionales para certificaciones reconocidas.</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Justificación:</strong> Los convenios permiten: intercambio de mejores prácticas, acceso a recursos formativos de calidad, certificaciones con reconocimiento nacional/internacional y economías de escala en desarrollo de contenidos.</p>
+                    <p><strong>Oportunidades identificadas:</strong> Academia Judicial de Chile, UNODC, National Judicial College, Red de Escuelas Judiciales de Iberoamérica.</p>
+                </div>
+            </div>
+
+            <!-- RECURSOS ADICIONALES -->
+            <div class="section">
+                <h2 class="section-title">8. Recursos para Capacitación</h2>
+                
+                <h3 class="subsection-title">Plataformas Internacionales Gratuitas</h3>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>The National Judicial College (NJC)</h3>
+                    <p><strong>Qué ofrece:</strong> Cursos gratuitos para jueces (ej: "Financial Statements in the Courtroom")</p>
+                    <p><strong>Por qué es útil:</strong> Enfoque judicial directo con metodología probada en sistema estadounidense. Aunque muchos cursos son en inglés y no certifican para sistema mexicano, desarrollan habilidades técnicas transferibles (análisis financiero, gestión de casos complejos).</p>
+                    <p><strong>Recomendación:</strong> Útil para jueces bilingües que buscan perspectivas comparadas y herramientas prácticas.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>United Nations Office on Drugs and Crime (UNODC)</h3>
+                    <p><strong>Qué ofrece:</strong> Cursos gratuitos en línea sobre justicia, corrupción, derecho penal internacional</p>
+                    <p><strong>Por qué es útil:</strong> Nivel internacional de calidad, contenidos actualizados sobre temas críticos (crimen organizado, corrupción judicial, derechos humanos). Totalmente gratuito con certificación digital.</p>
+                    <p><strong>Recomendación:</strong> Excelente complemento para formación en temas especializados con estándares internacionales. Aunque no da puntos directos para carrera judicial mexicana, suma al perfil profesional.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>Academia Judicial de Chile</h3>
+                    <p><strong>Qué ofrece:</strong> Programas de formación continua, cursos en línea y recursos para aspirantes a jueces</p>
+                    <p><strong>Por qué es útil:</strong> Sistema judicial chileno es similar al mexicano (ambos de tradición civilista). Modelo muy alineado a necesidades de la judicatura latinoamericana con enfoque en oralidad, derechos humanos y gestión judicial.</p>
+                    <p><strong>Recomendación:</strong> Ideal para aspirantes y jueces que buscan formación práctica en español con metodología probada en contexto latinoamericano. Verificar compatibilidad de certificación con México.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>Plataformas MOOCs (Coursera, Alison, Edutin Academy)</h3>
+                    <p><strong>Qué ofrecen:</strong> Cursos masivos en línea de derecho, con opción gratuita para auditar y certificados digitales</p>
+                    <p><strong>Por qué son útiles:</strong> Gran accesibilidad y flexibilidad horaria. Coursera ofrece cursos de universidades reconocidas en español. Edutin y Alison tienen certificados gratuitos o de bajo costo.</p>
+                    <p><strong>Recomendación:</strong> Excelentes para formación complementaria y actualización continua. Los certificados pueden no tener reconocimiento oficial para carrera judicial, pero suman al perfil profesional y demuestran compromiso con la formación continua.</p>
+                    <p><strong>Ventaja adicional:</strong> Permiten explorar temas especializados (derecho digital, propiedad intelectual, arbitraje) sin costo inicial.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>Instituciones Latinoamericanas</h3>
+                    <p><strong>Qué ofrecen:</strong> Escuela Judicial de Argentina, programas gubernamentales de capacitación en México</p>
+                    <p><strong>Por qué son útiles:</strong> Contexto regional similar, programas en español, mayor probabilidad de reconocimiento entre países latinoamericanos por convenios bilaterales.</p>
+                    <p><strong>Recomendación:</strong> Verificar compatibilidad y reconocimiento específico en Morelos/México. Algunas ofrecen "Capacítate gratis y recibe certificación" con entidades gubernamentales mexicanas, lo que puede tener mayor validez local.</p>
+                </div>
+                
+                <div class="explanation-box">
+                    <p><strong>Estrategia recomendada para aspirantes:</strong></p>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Corto plazo:</strong> MOOCs gratuitos para actualización inmediata en temas específicos</li>
+                        <li><strong>Mediano plazo:</strong> Cursos de organismos internacionales (UNODC) para certificación con respaldo reconocido</li>
+                        <li><strong>Largo plazo:</strong> Programas formales de escuelas judiciales latinoamericanas con posible reconocimiento oficial</li>
+                        <li><strong>Complemento:</strong> National Judicial College para perspectivas comparadas (si domina inglés)</li>
+                    </ol>
+                    <p style="margin-top: 10px;"><strong>Criterio de selección:</strong> Privilegiar aquellos con certificación, contenido práctico, modalidad flexible y posibilidad de validación posterior en el sistema judicial mexicano.</p>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuentes:</strong> The National Judicial College (judges.org) / UNODC e-Learning / Academia Judicial de Chile / Coursera, Alison, Edutin Academy / Escuela Judicial Argentina (escuelajudicial.pjn.gov.ar)
+                </div>
+            </div>
+
+            <!-- CONVENIOS -->
+            <div class="section">
+                <h2 class="section-title">9. Convenios y Alianzas Estratégicas en Morelos</h2>
+                
+                <p style="margin-bottom: 20px;">El Poder Judicial del Estado de Morelos y su Escuela Judicial tienen capacidad legal y operativa para celebrar diversos tipos de convenios, tanto nacionales como internacionales, para fortalecer la capacitación judicial.</p>
+                
+                <h3 class="subsection-title">Tipos de Convenios Disponibles</h3>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>1. Convenios Interinstitucionales Nacionales</h3>
+                    <p><strong>Con quién:</strong> Secretaría de Seguridad Pública (estatal/federal), órganos electorales locales (TEEM), otras instancias públicas</p>
+                    <p><strong>Objetivo:</strong> Colaboración para capacitación conjunta, cursos especializados, talleres y prácticas profesionales</p>
+                    <p><strong>Ventaja:</strong> Acceso a recursos especializados del gobierno federal y estatal, formación en temas transversales (seguridad, procesos electorales, administración pública)</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Ejemplo concreto:</strong> Convenio TSJEM ↔ TEEM firmado en agosto 2025 para capacitación conjunta en materia electoral y fortalecimiento institucional.</p>
+                    <p><strong>Por qué es relevante:</strong> Los convenios interinstitucionales permiten economías de escala (compartir costos de capacitación) y acceso a experticia especializada que no existe dentro del Poder Judicial.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>2. Convenios con Universidades e Instituciones Académicas</h3>
+                    <p><strong>Con quién:</strong> UAEM, universidades privadas locales y nacionales, centros académicos especializados</p>
+                    <p><strong>Objetivo:</strong> Diplomados conjuntos, programas de posgrado, prácticas profesionales, emisión de constancias con validez académica</p>
+                    <p><strong>Ventaja:</strong> Respaldo académico formal, acceso a infraestructura educativa, certificaciones con reconocimiento de validez oficial de estudios (RVOE)</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Estado actual:</strong> El TSJEM ya tiene convenios vigentes con UAEM y universidades privadas, listados en portales de transparencia.</p>
+                    <p><strong>Por qué es estratégico:</strong> Las universidades pueden emitir títulos y grados con RVOE, lo que da mayor peso curricular a los programas de la Escuela Judicial. También facilita acceso a investigación jurídica actualizada y cuerpo docente calificado.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>3. Vínculos con Suprema Corte y Casas de Cultura Jurídica</h3>
+                    <p><strong>Con quién:</strong> SCJN, Casas de la Cultura Jurídica, programas nacionales del Poder Judicial Federal</p>
+                    <p><strong>Objetivo:</strong> Actividades académicas, difusión de jurisprudencia, programas de formación judicial, acceso a materiales y recursos de la SCJN</p>
+                    <p><strong>Ventaja:</strong> Conexión con la máxima instancia judicial, actualización en criterios jurisprudenciales, participación en programas nacionales de excelencia</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Mecanismo:</strong> Las Casas de la Cultura Jurídica operan bajo convenios marco entre SCJN y tribunales estatales, facilitando la firma de acuerdos específicos.</p>
+                    <p><strong>Por qué es fundamental:</strong> Alinea la formación local con estándares nacionales del más alto tribunal, facilita homologación de criterios y mejora la calidad argumentativa de las sentencias locales.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>4. Convenios con Organizaciones Civiles y Centros Especializados</h3>
+                    <p><strong>Con quién:</strong> Centro de Ética Judicial A.C., centros de derechos humanos, organizaciones de justicia restaurativa</p>
+                    <p><strong>Objetivo:</strong> Talleres especializados, asesoría técnica, formación en ética judicial, derechos humanos y perspectiva de género</p>
+                    <p><strong>Ventaja:</strong> Acceso a conocimiento especializado, flexibilidad en programas, enfoque en valores y competencias blandas (integridad, empatía, liderazgo)</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Caso exitoso:</strong> Renovación del convenio con Centro de Ética Judicial A.C. en octubre 2024.</p>
+                    <p><strong>Por qué es importante:</strong> La ética judicial y los derechos humanos son ejes transversales críticos. Las OSC especializadas ofrecen metodologías innovadoras y enfoque práctico que complementa la formación técnico-jurídica tradicional.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 15px;">
+                    <h3>5. Programas y Becas Internacionales</h3>
+                    <p><strong>Con quién:</strong> AMEXCID (Agencia Mexicana de Cooperación Internacional), SRE, programas de cooperación técnica, universidades extranjeras</p>
+                    <p><strong>Objetivo:</strong> Becas para formación internacional, cooperación técnica, intercambio de mejores prácticas, movilidad académica</p>
+                    <p><strong>Ventaja:</strong> Exposición a sistemas judiciales comparados, networking internacional, acceso a innovaciones en administración de justicia</p>
+                </div>
+                <div class="explanation-box">
+                    <p><strong>Mecanismo de acceso:</strong> A través de la Consejería Jurídica estatal y coordinación con SRE/AMEXCID se pueden gestionar esquemas de cooperación y becas.</p>
+                    <p><strong>Por qué es valioso:</strong> La perspectiva internacional permite identificar soluciones innovadoras aplicadas en otros países (justicia digital, oralidad avanzada, inteligencia artificial en tribunales) que pueden adaptarse al contexto de Morelos.</p>
+                    <p><strong>Ejemplos de programas:</strong> Becas de excelencia del Gobierno de México, programas de la OEA, cooperación con tribunales de España, Chile, Colombia.</p>
+                </div>
+                
+                <h3 class="subsection-title">Marco Normativo y Regulación</h3>
+                <div class="explanation-box">
+                    <p><strong>Base legal:</strong> La Escuela Judicial y el TSJEM cuentan con reglamentos y acuerdos que regulan cómo se gestionan convenios, becas y su firma. Estos instrumentos están publicados en el portal jurídico del estado.</p>
+                    <p><strong>Proceso:</strong> Los convenios son aprobados por el Consejo de la Judicatura del Poder Judicial del Estado de Morelos y suscritos por el Magistrado Presidente o el Magistrado comisionado de la Escuela Judicial, según corresponda.</p>
+                    <p><strong>Transparencia:</strong> Los convenios vigentes están disponibles en portales de transparencia, cumpliendo con obligaciones de acceso a la información pública.</p>
+                </div>
+                
+                <h3 class="subsection-title">Convenios Actuales Identificados</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h3>✓ TSJEM ↔ TEEM</h3>
+                        <p><strong>Firmado:</strong> Agosto 2025</p>
+                        <p><strong>Materia:</strong> Capacitación conjunta electoral</p>
+                    </div>
+                    <div class="card">
+                        <h3>✓ Centro de Ética Judicial</h3>
+                        <p><strong>Renovado:</strong> Octubre 2024</p>
+                        <p><strong>Materia:</strong> Formación en ética judicial</p>
+                    </div>
+                    <div class="card">
+                        <h3>✓ Universidades Locales</h3>
+                        <p><strong>Vigentes:</strong> UAEM y privadas</p>
+                        <p><strong>Materia:</strong> Diplomados y posgrados</p>
+                    </div>
+                    <div class="card">
+                        <h3>✓ SCJN / Casas Cultura</h3>
+                        <p><strong>Marco:</strong> Convenio nacional</p>
+                        <p><strong>Materia:</strong> Difusión y formación judicial</p>
+                    </div>
+                </div>
+                
+                <h3 class="subsection-title">Recomendaciones para Nuevos Convenios</h3>
+                <div class="key-point">
+                    <p><strong>Prioridad 1: EFFJ (Escuela Federal de Formación Judicial)</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Convenio de cooperación para intercambio de mejores prácticas, acceso a plataformas virtuales y certificación de programas</p>
+                </div>
+                
+                <div class="key-point">
+                    <p><strong>Prioridad 2: Red de Escuelas Judiciales Iberoamericanas</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Adhesión a redes regionales para benchmarking y participación en programas de movilidad académica</p>
+                </div>
+                
+                <div class="key-point">
+                    <p><strong>Prioridad 3: Instituciones Tecnológicas (IPN, ITESM)</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Convenios para formación en justicia digital, inteligencia artificial aplicada y gestión de datos judiciales</p>
+                </div>
+                
+                <div class="key-point">
+                    <p><strong>Prioridad 4: Organismos Internacionales (UNODC, OEA)</strong></p>
+                    <p style="margin-top: 8px; color: #64748b;">Participación en programas de cooperación técnica en crimen organizado, corrupción y derechos humanos</p>
+                </div>
+                
+                <div class="source">
+                    <strong>Fuentes:</strong> Portal oficial TSJEM (tsjmorelos.gob.mx) / Portal de Transparencia Morelos (transparenciamorelos.mx) / SCJN - Casas de la Cultura Jurídica (sitios.scjn.gob.mx) / Centro de Ética Judicial / Gobierno de México - AMEXCID / Marco Jurídico Morelos (marcojuridico.morelos.gob.mx) / Gobierno del Estado de Morelos
+                </div>
+            </div>
+
+            <!-- CONCLUSIONES -->
+            <div class="section">
+                <h2 class="section-title">10. Conclusiones y Siguientes Pasos</h2>
+                
+                <div class="stat-highlight">
+                    <strong>Hallazgo principal:</strong> Las escuelas judiciales más efectivas combinan tres elementos: medición sistemática de resultados, especialización por competencias y transparencia en la gestión.
+                </div>
+                
+                <h3 class="subsection-title">Oportunidades para Morelos</h3>
+                <ul>
+                    <li><strong>Fortaleza identificada:</strong> Marco institucional sólido (reglamento, ejes estratégicos, estructura definida desde 2003)</li>
+                    <li><strong>Área de mejora:</strong> Implementación de sistema de indicadores públicos y evaluación continua</li>
+                    <li><strong>Diferenciador potencial:</strong> Integración de derechos humanos y perspectiva de género como eje transversal (ya contemplado en visión)</li>
+                </ul>
+                
+                <h3 class="subsection-title">Pasos Inmediatos Recomendados</h3>
+                <div class="key-point">
+                    <strong>1. Diagnóstico inicial (1-2 meses):</strong> Encuesta a operadores judiciales sobre necesidades de capacitación prioritarias
+                </div>
+                <div class="key-point">
+                    <strong>2. Sistema de medición (3-4 meses):</strong> Definir indicadores clave y establecer línea base (matrícula actual, satisfacción, completación)
+                </div>
+                <div class="key-point">
+                    <strong>3. Piloto de transparencia (3 meses):</strong> Publicar primer informe anual con datos y resultados
+                </div>
+                <div class="key-point">
+                    <strong>4. Convenio estratégico (6 meses):</strong> Formalizar alianza con EFFJ u otra escuela judicial líder para intercambio de mejores prácticas
+                </div>
+                <div class="key-point">
+                    <strong>5. Programa especializado (6-12 meses):</strong> Desarrollar primer programa por competencias basado en diagnóstico participativo
+                </div>
+                
+                <div class="explanation-box">
+                    <p><strong>Indicador de éxito a 1 año:</strong> Contar con sistema de indicadores implementado, al menos un informe público publicado y un programa piloto de formación por competencias evaluado con resultados medibles.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Documento generado el 22 de octubre de 2025 | Para uso ejecutivo</p>
+            <p style="margin-top: 5px;">Fuentes: Secretaría de Economía, EFFJ, CEJA, México Evalúa, World Justice Project, Tribunal Superior de Justicia de Morelos</p>
+        </div>
+    </div>
+
+    <script>
+        // Gráfica de Género
+        const genderCtx = document.getElementById('genderChart').getContext('2d');
+        new Chart(genderCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Escuela Judicial Guanajuato', 'Escuela Judicial Estado de México'],
+                datasets: [{
+                    label: 'Hombres',
+                    data: [40.5, 36.1],
+                    backgroundColor: '#3b82f6'
+                }, {
+                    label: 'Mujeres',
+                    data: [59.5, 63.9],
+                    backgroundColor: '#ec4899'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Distribución por Género (%) - 2022',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gráfica de Desempeño
+        const perfCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(perfCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Guanajuato', 'Estado de México'],
+                datasets: [{
+                    label: 'Matriculados',
+                    data: [111, 97],
+                    backgroundColor: '#3b82f6'
+                }, {
+                    label: 'Egresados',
+                    data: [77, 85],
+                    backgroundColor: '#10b981'
+                }, {
+                    label: 'Graduados',
+                    data: [56, 35],
+                    backgroundColor: '#f59e0b'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Indicadores de Desempeño Académico - 2022',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfica de Programas
+        const progCtx = document.getElementById('programsChart').getContext('2d');
+        new Chart(progCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Derecho Judicial',
+                    'Mecanismos Alternos',
+                    'Derecho Procesal Judicial',
+                    'Justicia Penal',
+                    'Otros programas'
+                ],
+                datasets: [{
+                    data: [55, 32, 29, 23, 32],
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#10b981',
+                        '#f59e0b',
+                        '#ec4899',
+                        '#8b5cf6'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Programas con Mayor Matrícula (número de estudiantes)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
